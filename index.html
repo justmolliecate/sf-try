@@ -8,6 +8,7 @@
   <!-- Load Leaflet code library - see updates at http://leafletjs.com/download.html -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="convertcsv.geojson" type="text/javascript"></script>
 
   <!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
@@ -45,6 +46,10 @@
   }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
 
   // upload CSV file from local directory and display latitude and longitude coordinates as default blue markers on map
+
+
+  var hydro = new L.LayerGroup();
+         L.geoJson(convertcsv, {style: convertcsv).addTo(hydro);
 
 
 
